@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SuOtomasyonModelStoreContainer" CdmEntityContainer="SuOtomasyonEntities">
+    <EntitySetMapping Name="Musteriler">
+      <EntityTypeMapping TypeName="SuOtomasyonModel.Musteriler">
+        <MappingFragment StoreEntitySet="Musteriler">
+          <ScalarProperty Name="MusteriAdres" ColumnName="MusteriAdres" />
+          <ScalarProperty Name="MusteriTelefon" ColumnName="MusteriTelefon" />
+          <ScalarProperty Name="MusteriSoyadi" ColumnName="MusteriSoyadi" />
+          <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparisler">
+      <EntityTypeMapping TypeName="SuOtomasyonModel.Siparisler">
+        <MappingFragment StoreEntitySet="Siparisler">
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
+          <ScalarProperty Name="SiparisDurum" ColumnName="SiparisDurum" />
+          <ScalarProperty Name="SiparisTutar" ColumnName="SiparisTutar" />
+          <ScalarProperty Name="SiparisID" ColumnName="SiparisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

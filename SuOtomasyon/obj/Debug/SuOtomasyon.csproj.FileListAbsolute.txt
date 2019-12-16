@@ -1,0 +1,17 @@
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\SuOtomasyon.exe.config
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\SuOtomasyon.exe
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\SuOtomasyon.pdb
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.csprojAssemblyReference.cache
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.Form1.resources
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.Guncelle.resources
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.Properties.Resources.resources
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.YeniKayit.resources
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.csproj.GenerateResource.cache
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.exe
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.pdb
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.csproj.CopyComplete
+C:\Users\Oğuz\source\repos\SuOtomasyon\SuOtomasyon\obj\Debug\SuOtomasyon.YeniSiparis.resources

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SuOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriAdi" Type="varchar" MaxLength="100" />
+          <Property Name="MusteriSoyadi" Type="varchar" MaxLength="100" />
+          <Property Name="MusteriTelefon" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriAdres" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Siparisler">
+          <Key>
+            <PropertyRef Name="SiparisID" />
+          </Key>
+          <Property Name="SiparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiparisTutar" Type="int" />
+          <Property Name="SiparisDurum" Type="nvarchar" MaxLength="20" />
+          <Property Name="SiparisTarih" Type="datetime" />
+          <Property Name="MusteriID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Siparisler_Musteriler">
+          <End Role="Musteriler" Type="Self.Musteriler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Siparisler" Type="Self.Siparisler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="Siparisler">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SuOtomasyonModelStoreContainer">
+          <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Siparisler_Musteriler" Association="Self.FK_Siparisler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Siparisler" EntitySet="Siparisler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SuOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SuOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Musteriler" EntityType="SuOtomasyonModel.Musteriler" />
+          <EntitySet Name="Siparisler" EntityType="SuOtomasyonModel.Siparisler" />
+          <AssociationSet Name="FK_Siparisler_Musteriler" Association="SuOtomasyonModel.FK_Siparisler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Siparisler" EntitySet="Siparisler" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriSoyadi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Siparisler" Relationship="SuOtomasyonModel.FK_Siparisler_Musteriler" FromRole="Musteriler" ToRole="Siparisler" />
+        </EntityType>
+        <EntityType Name="Siparisler">
+          <Key>
+            <PropertyRef Name="SiparisID" />
+          </Key>
+          <Property Name="SiparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiparisTutar" Type="Int32" />
+          <Property Name="SiparisDurum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisTarih" Type="DateTime" Precision="3" />
+          <Property Name="MusteriID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Musteriler" Relationship="SuOtomasyonModel.FK_Siparisler_Musteriler" FromRole="Siparisler" ToRole="Musteriler" />
+        </EntityType>
+        <Association Name="FK_Siparisler_Musteriler">
+          <End Type="SuOtomasyonModel.Musteriler" Role="Musteriler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SuOtomasyonModel.Siparisler" Role="Siparisler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="Siparisler">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SuOtomasyonModelStoreContainer" CdmEntityContainer="SuOtomasyonEntities">
+          <EntitySetMapping Name="Musteriler">
+            <EntityTypeMapping TypeName="SuOtomasyonModel.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="MusteriAdres" ColumnName="MusteriAdres" />
+                <ScalarProperty Name="MusteriTelefon" ColumnName="MusteriTelefon" />
+                <ScalarProperty Name="MusteriSoyadi" ColumnName="MusteriSoyadi" />
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Siparisler">
+            <EntityTypeMapping TypeName="SuOtomasyonModel.Siparisler">
+              <MappingFragment StoreEntitySet="Siparisler">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
+                <ScalarProperty Name="SiparisDurum" ColumnName="SiparisDurum" />
+                <ScalarProperty Name="SiparisTutar" ColumnName="SiparisTutar" />
+                <ScalarProperty Name="SiparisID" ColumnName="SiparisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
